@@ -1,0 +1,90 @@
+body {
+    /* Festive green background */
+    background: linear-gradient(to bottom, #001f4d, #003366);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the ornaments and heading */
+.ornament-container {
+    text-align: center;
+}
+
+/* Styling for the heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* Button container to align ornaments properly */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Common style for all ornaments */
+.ornament {
+    width: 70px;
+    height: 70px;
+    /* Makes the buttons circular */
+    border-radius: 50%;
+    /* Gold border for festive look */
+    border: 3px solid gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Red ornaments */
+.ornament:nth-child(odd) {
+    /* Bright red gradient */
+    background: radial-gradient(circle, #ff4d4d, #b22222);
+}
+
+/* Green ornaments */
+.ornament:nth-child(even) {
+    /* Bright green gradient */
+    background: radial-gradient(circle, #32cd32, #228b22);
+}
+
+/* Ornament hook styling */
+.ornament::before {
+    /* Decorative hook on top of each ornament, looked this uo */
+    content: '';
+    width: 20px;
+    height: 10px;
+    background: gold;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ornaments grow and glow a bit on hover */
+.ornament:hover {
+    /* Slightly grow the ornament */
+    transform: scale(1.1);
+    /* Glowing effect */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.6);
+}
+
+/* ornaments will shrink slightly */
+.ornament:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
